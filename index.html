@@ -15,8 +15,11 @@
        }    
        
 
-       const playerSelection = prompt("Please enter rock, paper or scissors");
+       const playerSelection1 = prompt("Please enter rock, paper or scissors (open the console to see results)");
        // where user inputs their choice
+       const playerSelection = playerSelection1.toLowerCase();
+       // converted user choice into all lowercase letters
+       
 
        const computerSelection = getComputerChoice();
        // computer's randomised choice assigned to this variable
