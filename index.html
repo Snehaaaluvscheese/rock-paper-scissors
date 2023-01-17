@@ -15,18 +15,23 @@
        }    
        
 
-       const playerSelection1 = prompt("Please enter rock, paper or scissors (open the console to see results)");
-       // where user inputs their choice
-       const playerSelection = playerSelection1.toLowerCase();
-       // converted user choice into all lowercase letters
        
+      
+       function playerInput() {
+        const choice = prompt("Please enter rock, paper or scissors (open the console to see results)");
+       // where user inputs their choice
+       const playerSelect = choice.toLowerCase();
+       // converted user choice into all lowercase letters
+       return playerSelect;}
 
-       const computerSelection = getComputerChoice();
-       // computer's randomised choice assigned to this variable
+       
 
 
        function playRound(playerSelection, computerSelection) {
        // your code here!
+        
+       
+       
 
        // a single round of rock, paper, scissors
 
@@ -34,36 +39,77 @@
         return ("It's a tie!");
       } 
        else if (playerSelection === "rock" && computerSelection === "scissors") {
+        userScore++
         return ("Player wins!");
       } 
       else if (playerSelection === "rock" && computerSelection === "paper") {
+        computerScore++
         return ("Computer wins!");
       }
       else if (playerSelection === "paper" && computerSelection === "paper") {
         return ("It's a tie!");
       }
       else if (playerSelection === "paper" && computerSelection === "rock") {
+        userScore++
         return ("Player wins!");
       }
       else if (playerSelection === "paper" && computerSelection === "scissors") {
+        computerScore++
         return ("Computer wins!");
       }
       else if (playerSelection === "scissors" && computerSelection === "scissors") {
         return ("It's a tie!");
       }
       else if (playerSelection === "scissors" && computerSelection === "rock") {
+        computerScore++
         return ("Computer wins!");
       }
       else if (playerSelection === "scissors" && computerSelection === "paper") {
+        userScore++
         return ("Player wins!");
       }
-    }
       
- 
-       // console logging the player's choice, the computer's choice and the result of the round respectively.
-       console.log ("Player choice is " + playerSelection);
+    }
+      // console logging the player's choice, the computer's choice and the result of the round respectively.
+       
+       
+
+       function game() {
+        
+          const computerSelection = getComputerChoice();
+       // computer's randomised choice assigned to this variable
+          const playerSelection = playerInput();
+        for (let i = 0; i < 5; i++) {
+         
+          playerInput();
+          getComputerChoice();
+          let userScore = 0;
+          let computerScore = 0;
+          console.log(playRound(playerSelection, computerSelection));
+        
+
+        if (userScore > computerScore) {
+          return "You win!";
+        }
+          else if (userScore < computerScore) {
+            return "You lose!";                
+          }
+          else {
+            return "It is a tie!";
+        }
+        console.log ("Player choice is " + playerSelection);
        console.log ("Computer choice is " + computerSelection);
-       console.log(playRound(playerSelection, computerSelection));
+       
+       console.log("your score = " + userScore);
+       console.log("Computer's score = " + computerScore);
+        }
+// your code here!
+                
+      }
+        console.log(game());
+
+       
+       
           
     </script>
   </body>
