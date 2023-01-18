@@ -26,14 +26,7 @@
        return playerSelect;
       }
         
-      let playerSelection = playerInput();
-      console.log("You: " + playerSelection);
-
-      let computerSelection = getComputerChoice();
-      console.log("Computer: " + computerSelection);
-
-      let userScore = 0;
-      let computerScore = 0;
+      
 
       
 
@@ -77,38 +70,30 @@
         return ("You win!! Scissors beats paper");
       }
     }
+      let userScore = 0;
+      let computerScore = 0;
 
-     console.log (playRound(playerSelection, computerSelection))
+      function game() {
+      let playerSelection = playerInput();
+      console.log("You: " + playerSelection);
 
-     
+      let computerSelection = getComputerChoice();
+      console.log("Computer: " + computerSelection);
 
-    
+      console.log (playRound(playerSelection, computerSelection));
+      console.log ("Your score: " + userScore);
+      console.log ("Computer score: " + computerScore);
 
-    function game(){
-     
-      }
-    
+     }
 
-     
-    
+     game();
+     game();
+     game();
+     game();
+     game();
 
-      
-
-       
-
-       
-       
-          
-    </script>
+     if (userScore > computerScore) {console.log("You win the game! c:");}
+     else if (computerScore > userScore) {console.log("You lose the game! :c");}
+       </script>
   </body>
-
-
-
-
-
-
-
-
-
-
 </html>
